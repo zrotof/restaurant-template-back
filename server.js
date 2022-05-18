@@ -9,8 +9,9 @@ const HttpHeader = require("./services/createHttpHeaderRequestService");
 
 const bodyParser = require('body-parser')
 
-//Import cors module 
-var cors = require('cors');
+//Importing cors
+const cors = require("./cors");
+
 const { required } = require('nodemon/lib/config');
 //Appel du module de configuration
 
