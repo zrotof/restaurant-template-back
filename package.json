@@ -2,7 +2,7 @@
   "name": "backenddev",
   "version": "1.0.0",
   "description": "this is the back office of our elites voyages website",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
