@@ -11,6 +11,7 @@ var corsOptionDelegate  = (req, callback) =>{
 
     if(whiteList.indexOf(req.header('Origin')) !== -1){
         corsOptions = { origin: true};
+        console.log("in cors")
     }
 
 

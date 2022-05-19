@@ -5,7 +5,7 @@ const TourService = require('../../services/tourService');
 
 router.get('/', async(req, res) =>{
 
-    
+    res.end("You are in the sauce")
 });
 
 router.get('/dubai', async (req,res,next)=>{

@@ -22,7 +22,7 @@ class MailService{
 
         //Parse body of the mail
         if(phone.length == 0){
-            messageBody = text + "\n\n" + preference + "\n\n" + civility + " " + firstname + " " + lastname +"\n" +email;
+            messageBody = text + "\n\n" + civility + " " + firstname + " " + lastname +"\n" +email;
         }
         else{
             messageBody = text + "\n\n" + preferences + "\n\n" + civility + " " + firstname + " " + lastname +"\n" + email +"\n" + phone;
@@ -58,7 +58,7 @@ class MailService{
 
         let recap ;
         let personalData ;
-        let finalSubject = "Billet d'avion" ;
+        let finalSubject = "Billet d'avion";
         
         //Parse body of the mail
         if(phone.length == 0){
@@ -121,9 +121,8 @@ class MailService{
     //Sending a mail from the dhl form on client side
     sendDhlMail(civility, firstname, lastname, email, phone, country, weight, contains, dimensions, cb) { 
     
-        let info ;
         let personalData ;
-        let finalSubject = "DHL" ;
+        let finalSubject = "DHL | Dévis expédition colis" ;
         
         //Parse body of the mail
         if(phone.length == 0){
@@ -133,24 +132,17 @@ class MailService{
             personalData = civility + " " + firstname + " " + lastname +"\n" +email +"\n" + phone;;
         }
 
-        if(dimensions.length == 0 ){
-
-            info = "Informations d'expédition" + "\n\n" + 
-                    "Destination : "+country + "\n" + 
-                    "Poids : " + weight + "\n" +
-                    "Contenu : " + contains + "\n"
-        }
-        else{
-
-            info = "Informations d'expédition" + "\n\n" + 
+        
+        let info = "Informations d'expédition" + "\n\n" + 
+                    "Départ : Cameroun" + "\n" +
                     "Destination : "+country + "\n" + 
                     "Poids : " + weight + "\n" +
                     "Contenu : " + contains + "\n" +
-                    "dimensions du collis : " + dimensions + "\n"
+                    "Dimensions du colis : " + dimensions ;
             
-        }
+        
 
-        let messageBody = info + "\n\n" + personalData;
+        let messageBody = "Bonjour," +"\n\n"+ info + "\n\n" + personalData;
 
         var transporter = nodemailer.createTransport(mailGun(auth)); 
 
@@ -176,28 +168,28 @@ class MailService{
     //Sending a mail from the car form on client side
     sendCarMail(reason, town, capacity, driver, dateDeb, dateFin, heureDeb, heureFin, extras, civility, firstname, lastname, email, phone, cb) { 
     
-        let finalSubject = "Location de voiture" ;
+        let finalSubject = "Voiture | Location de voiture" ;
         
         let personalData = civility + " " + firstname + " " + lastname +"\n" +email +"\n" + phone ;
-        let extrasList;
+        let extrasList = [];
 
         if(extras.length > 0){
             extras.forEach(element => {
-                extrasList.push(element+", ")
+                extrasList.push(element+" ")
             });
         }
 
-        let info = "Information de réservation \n\n"
+        let info = "Information de location \n\n"
                     + "Motif de location : " +reason + "\n" 
                     + "Ville : " + town + "\n"
-                    + "Nombre de places : " + capacity + "\m"
-                    + "Loaction : " + driver + "\n"
+                    + "Nombre de places : " + capacity + "\n"
+                    + "Location : " + driver + "\n"
                     + "Date début : " + dateDeb + " " + heureDeb + "\n"
                     + "Date fin : " + dateFin + " " + heureFin + "\n"
                     + "Extras : " + extrasList
 
 
-        let messageBody = info + "\n\n" + personalData;
+        let messageBody = "Bonjour, " +"\n\n"+  info + "\n\n" + personalData;
 
         var transporter = nodemailer.createTransport(mailGun(auth)); 
 
@@ -226,13 +218,13 @@ class MailService{
     sendApartMail(type, town, dateDeb, dateFin, extras, civility, firstname, lastname, email, phone,cb){
 
         let personalData = civility + " " + firstname + " " + lastname +"\n" +email +"\n" + phone ;
-        let finalSubject = "Appartement meublés" ;
+        let finalSubject = "Appartement | Location appartement meublé" ;
 
-        let extrasList = '';
+        let extrasList = [];
 
         if(extras.length > 0){
             extras.forEach(element => {
-                extrasList += element+", ";
+                extrasList += element+" ";
             });
         }
 
@@ -243,7 +235,7 @@ class MailService{
                     + "Date fin : " + dateFin + "\n"
                     + "Extras : " + extrasList
 
-        let messageBody = info + "\n\n" + personalData;
+        let messageBody = "Bonjour, " +"\n\n"+ info + "\n\n" + personalData;
 
 
         var transporter = nodemailer.createTransport(mailGun(auth)); 
@@ -255,8 +247,6 @@ class MailService{
             subject: finalSubject,
             text: messageBody
         };
-
-        console.log(mailOptions)
 
         transporter.sendMail(mailOptions, function (error, info){
             if (error) {
@@ -272,18 +262,18 @@ class MailService{
 
         let info
         let personalData = civility + " " + firstname + " " + lastname +"\n" +email +"\n" + phone ;
-        let finalSubject = "Hébergement hôtel" ;
+        let finalSubject = "HÖTEL | Hébergement hôtel" ;
 
-        let extrasList = '';
+        let extrasList = [];
 
         if(extras.length > 0){
             extras.forEach(element => {
-                extrasList += element+", ";
+                extrasList += element+" ";
             });
         }
 
         if(hotels.length == 0){
-            info = "Information de réservation \n\n"
+            info = "Informations de réservation \n\n"
             + "Nombre de chambre(s) : " +nbr + "\n" 
             + "Ville : " + town + "\n"
             + "Date début : " + dateDeb + "\n"
@@ -291,7 +281,7 @@ class MailService{
             + "Extras : " + extrasList
         }
         else{
-            info = "Information de réservation \n\n"
+            info = "Informations de réservation \n\n"
             + "Nombre de chambre(s) : " +nbr + "\n" 
                     + "Ville : " + town + "\n"
                     + "Date début : " + dateDeb + "\n"
@@ -301,7 +291,7 @@ class MailService{
         }
 
         
-        let messageBody = info + "\n\n" + personalData;
+        let messageBody = "Bonjour, " +"\n\n"+ info + "\n\n" + personalData;
 
 
         var transporter = nodemailer.createTransport(mailGun(auth)); 
@@ -314,19 +304,64 @@ class MailService{
             text: messageBody
         };
 
-        transporter.sendMail(mailOptions, function (err, info){
+        transporter.sendMail(mailOptions, function (error, info){
             
-            if (err) {
-                console.log("true")
+            if (error) {
 
-                console.log(err)
-                cb(err,null)
+                cb(error,null)
             } else {
-                console.log("true")
-                console.log(info)
+
                 cb(null,info)
             }
         });
+    }
+
+
+    sendCarParisMail(departure, arrival, date, hour, civility, firstname, lastname, email, cb){
+
+        let personalData = civility + " " + firstname + " " + lastname +"\n" +email ;
+        let finalSubject = "CAR-PARIS | Location VTC Paris" ;
+
+        let info = "Informations de réservation \n\n"
+            + "Adresse de départ " + departure + "\n" 
+            + "Adresse d'arrivée " + arrival + "\n"
+            + "Date : " + date + "\n"
+            + "Heure : " + hour ;
+
+
+
+        let messageBody = "Bonjour," + "\n\n" +info + "\n" + personalData;
+
+
+        var transporter = nodemailer.createTransport(mailGun(auth)); 
+    
+    
+            const mailOptions = {
+                from: email,
+                to: evEmail,
+                subject: finalSubject,
+                text: messageBody
+            };
+    
+ 
+
+
+                transporter.sendMail(mailOptions, function (error, info){
+                    if (error) {
+                        //if error occurs send error as response to client
+                        console.log("error");
+        
+                        cb(error,null)
+                    } else {
+                        //if mail is sent successfully send Sent successfully as response
+                        cb(null,info)
+                        console.log("message send succesfully");
+        
+                    }
+                });
+
+
+
     }
 
     
