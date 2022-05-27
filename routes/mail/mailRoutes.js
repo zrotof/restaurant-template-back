@@ -30,11 +30,10 @@ router.post('/flight',async (req,res,next)=>{
     await new MailService().sendFlightMail(way, cabine, departure, arrival, dateDep, dateRet, adult, child, infant, lastname, email, phone, message, function (error, info) { 
 
         if(error){
-            res.send(false)
+            res.json({message: 'error'})
         }
-
         else{
-            res.send(true)
+            res.json({message: 'success'})
         }
     })
 
@@ -110,6 +109,39 @@ router.post('/car-paris', async (req,res,next) =>{
     
     const {departure, arrival, date, hour, civility, firstname, lastname, email} = req.body;
     await new MailService().sendCarParisMail(departure, arrival, date, hour, civility, firstname, lastname, email, function (error, info) { 
+
+        if(error){
+            res.json({message: 'error'})
+
+        }
+        else{
+            res.json({message: 'success'})
+        }
+    })
+
+})
+
+router.post('/tour', async (req,res,next) =>{
+    
+    const {circuit,date,logement,civility,lastname,firstname,email,price,nombrePassagerAdult,nombrePassagerEnfant,nombrePassagerBebe} = req.body;
+    await new MailService().sendTourMail(circuit,date,logement,civility,lastname,firstname,email,price,nombrePassagerAdult,nombrePassagerEnfant,nombrePassagerBebe, function (error, info) { 
+
+        if(error){
+            res.json({message: 'error'})
+
+        }
+        else{
+            res.json({message: 'success'})
+        }
+    })
+
+})
+
+
+router.post('/newsletter', async (req,res,next) =>{
+    
+    const {email} = req.body;
+    await new MailService().addToNewsletter(email, function (error, info) { 
 
         if(error){
             res.json({message: 'error'})

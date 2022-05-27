@@ -40,13 +40,11 @@ class MailService{
         transporter.sendMail(mailOptions, function (error, info){
             if (error) {
                 //if error occurs send error as response to client
-                console.log("error");
 
                 cb(error,null)
             } else {
                 //if mail is sent successfully send Sent successfully as response
                 cb(null,info)
-                console.log("message send succesfully");
 
             }
         });
@@ -57,20 +55,13 @@ class MailService{
     sendFlightMail(way, cabine, departure, arrival, dateDep, dateRet, adult, child, infant, lastname, email, phone, message, cb){
 
         let recap ;
-        let personalData ;
-        let finalSubject = "Billet d'avion";
+        let finalSubject = "Vols | Billet d'avion";        
+        let personalData = lastname +"\n" + email +"\n" + phone;
         
-        //Parse body of the mail
-        if(phone.length == 0){
-            personalData = lastname +"\n" + email;
-        }
-        else{
-            personalData = lastname +"\n" + email +"\n" + phone;
-        }
 
         if(dateRet.length == 0 ){
 
-            recap = "Récap" + "\n\n" + 
+            recap = "Information de réservation" + "\n\n" + 
                     "Trajet : "+way + "\n" + 
                     "Cabine : " + cabine + "\n" +
                     "Départ : " + departure + "\n" +
@@ -82,7 +73,7 @@ class MailService{
         }
         else{
 
-            recap = "Récap" + "\n\n" + 
+            recap = "Information de réservation" + "\n\n" + 
                     "Trajet : "+way + "\n" + 
                     "Cabine : " + cabine + "\n" +
                     "Départ : " + departure + "\n" +
@@ -349,13 +340,11 @@ class MailService{
                 transporter.sendMail(mailOptions, function (error, info){
                     if (error) {
                         //if error occurs send error as response to client
-                        console.log("error");
         
                         cb(error,null)
                     } else {
                         //if mail is sent successfully send Sent successfully as response
                         cb(null,info)
-                        console.log("message send succesfully");
         
                     }
                 });
@@ -363,6 +352,96 @@ class MailService{
 
 
     }
+
+    sendTourMail(circuit,date,logement,civility,lastname,firstname,email,price,nombrePassagerAdult,nombrePassagerEnfant,nombrePassagerBebe, cb){
+
+        let personalData = civility + " " + firstname + " " + lastname +"\n" +email ;
+        let finalSubject = "Tourisme | Demande de réservation" ;
+
+        let info = "Informations de réservation : \n\n"
+            + "Date : " + date + "\n"
+            + "Logement : " +logement+ "\n"
+            + "Nombre de personnes total : " + ( nombrePassagerAdult +  nombrePassagerEnfant + nombrePassagerBebe) + "\n"
+            + "--->Adulte(s) : " + nombrePassagerAdult + "\n"
+            + "--->Enfant(s) : " +nombrePassagerEnfant + "\n"
+            + "--->Bébés(s) : " +nombrePassagerBebe ;
+
+
+
+        let messageBody = "Bonjour,"+
+                        "\nJe souhaite faire une réservation pour le circuit touristique intitulé : " + circuit+
+                        "\n\n" +info + 
+                        "\n\n" + personalData;
+
+
+        var transporter = nodemailer.createTransport(mailGun(auth)); 
+    
+    
+            const mailOptions = {
+                from: email,
+                to: evEmail,
+                subject: finalSubject,
+                text: messageBody
+            };
+    
+ 
+
+
+                transporter.sendMail(mailOptions, function (error, info){
+                    if (error) {
+                        //if error occurs send error as response to client
+        
+                        cb(error,null)
+                    } else {
+                        //if mail is sent successfully send Sent successfully as response
+                        cb(null,info)
+        
+                    }
+                });
+
+
+
+    }
+
+
+
+    addToNewsletter(email, cb){
+
+        let finalSubject = "Newsletter | Ajout à la newsletter" ;
+
+
+        let messageBody = "Bonjour, merci de m'ajouter à la newsletter pour profiter de vos promotions et vos nouvelles offres ";
+
+
+        var transporter = nodemailer.createTransport(mailGun(auth)); 
+    
+    
+            const mailOptions = {
+                from: email,
+                to: evEmail,
+                subject: finalSubject,
+                text: messageBody
+            };
+    
+ 
+
+
+                transporter.sendMail(mailOptions, function (error, info){
+                    if (error) {
+                        //if error occurs send error as response to client
+        
+                        cb(error,null)
+                    } else {
+                        //if mail is sent successfully send Sent successfully as response
+                        cb(null,info)
+        
+                    }
+                });
+
+
+
+    }
+
 
     
 

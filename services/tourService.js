@@ -18,7 +18,6 @@ class TourService{
                     icon:"faClock",
                     text:"7 jours et 8 Nuits"
                 }
-                
             ],
             images: [
                 {
@@ -80,34 +79,49 @@ class TourService{
                 title:"Programme du séjour",
                 teaser: "7 jours de pures plaisirs",
                 days:[
+
                     {
                         header: "Jour 1 : Départ",
-                        content:"Jour d’embarquement, rendez vous à 11h00 dans le Hall de l'aéroport pour les formalités de départ. Départ à 17h25 à destination de Dubaï. Après une escale de 2h, vous arrivez à Dubaï le lendemain matin à 08H30 heure de Dubaï. À votre arrivée, vous êtes accueilli par votre guide, qui vous conduit à votre hôtel."
+                        content:[
+                            {text : "Jour d’embarquement, rendez vous à 11h00 dans le Hall de l'aéroport pour les formalités de départ. Départ à 17h25 à destination de Dubaï. Après une escale de 2h, vous arrivez à Dubaï le lendemain matin à 08H30 heure de Dubaï. À votre arrivée, vous êtes accueilli par votre guide, qui vous conduit à votre hôtel."}
+                        ]
                     },
                     {
                         header: "Jour 2 : Arrivée à Dubaï + Croisière Marina",
-                        content:" Vous êtes accueilli(e) et conduit à l’hôtel, où vous faites votre Check-In et un petit déjeuner est disponible pour vous.16h00 Vous pouvez rester vous reposer à l’hôtel ou alors suivre le guide, qui vous emmènera explorer le quartier : Où changer son argent? Où trouver le distributeur, le supermarché et bien sûr répondre à vos nombreuses questions.19h00 départ en voiture pour votre première activité, Croisière sur la Marina de Dubaï . Vous embarquerez sur un bateau traditionnel pour une visite durant trois heures suivi d’un dîner et d’un spectacle de danse."
+                        content:[
+                            {text: "Vous êtes accueilli(e) et conduit à l’hôtel, où vous faites votre Check-In et un petit déjeuner est disponible pour vous.16h00 Vous pouvez rester vous reposer à l’hôtel ou alors suivre le guide, qui vous emmènera explorer le quartier : Où changer son argent? Où trouver le distributeur, le supermarché et bien sûr répondre à vos nombreuses questions.19h00 départ en voiture pour votre première activité, Croisière sur la Marina de Dubaï . Vous embarquerez sur un bateau traditionnel pour une visite durant trois heures suivi d’un dîner et d’un spectacle de danse."}
+                        ]
                     },
                     {
                         header: "Jour 3 : Safari au Désert",
-                        content:"Vous avez le temps de faire une grasse matinée pour récupérer du voyage ou de flemmarder au bord de la piscine après votre petit-déjeuner.A 15H00, une voiture vous récupère à l’hôtel, pour votre activité du jour: Le Safari Désert. Une balade en 4x4 où vous aurez l’opportunité d'affronter les dunes de désert, de monter sur un chameau ou de faire un tour en Quad (moto 4 roues, frais en plus).À la fin de la visite, vous serez accueilli(e) dans un camp traditionnel en plein désert, au programme: Menu Barbecue, Boissons, Spectacle de danseuses du ventre. À la fin du spectacle, vous êtes raccompagné à votre hôtel."
+                        content:[
+                            {text: "Vous avez le temps de faire une grasse matinée pour récupérer du voyage ou de flemmarder au bord de la piscine après votre petit-déjeuner.A 15H00, une voiture vous récupère à l’hôtel, pour votre activité du jour: Le Safari Désert. Une balade en 4x4 où vous aurez l’opportunité d'affronter les dunes de désert, de monter sur un chameau ou de faire un tour en Quad (moto 4 roues, frais en plus).À la fin de la visite, vous serez accueilli(e) dans un camp traditionnel en plein désert, au programme: Menu Barbecue, Boissons, Spectacle de danseuses du ventre. À la fin du spectacle, vous êtes raccompagné à votre hôtel."}
+                        ]
                     },
                     {
                         header: "Jour 4 : Tour De Ville",
-                        content:"Apres petit déjeuner, 9h00 visite guidé de la magnifique ville de Dubaï et tous ses joyaux. Le BURJ AL ARAB, Le BURJ KHALIFA (la plus haute tour du monde) – JUMEIRAH – le centre commercial mall of émirats, le marché des épices – balade."
+                        content:[
+                            {text: "Apres petit déjeuner, 9h00 visite guidé de la magnifique ville de Dubaï et tous ses joyaux. Le BURJ AL ARAB, Le BURJ KHALIFA (la plus haute tour du monde) – JUMEIRAH – le centre commercial mall of émirats, le marché des épices – balade."}
+                        ]
                     },
                     {
                         header: "Jour 5 : Visite Guidée Du Marché",
-                        content:"Apres petit déjeuner – 10h00 direction le marché pour une visite guidé (occasion de découvrir les bons coins des affaires)"
+                        content: [
+                            {text:"Apres petit déjeuner – 10h00 direction le marché pour une visite guidé (occasion de découvrir les bons coins des affaires)"}
+                        ]
                     },
                     {
                         header: "Jour 6 : Journée Libre",
-                        content:"Apres petit déjeuner à l’hôtel – prélèvement test covid – détente et balade"
-                    },
+                        content:[
+                            {text: "Apres petit déjeuner à l’hôtel – prélèvement test covid – détente et balade"
+                        }
+                        ]},
                     {
                         header: "Jour 7 : Dernier jour",
-                        content:"Petit déjeuner – shopping pour nos visiteur – soirée aéroport Formalité d’enregistrement – fin du séjour."
-                    }
+                        content:[
+                            {text: "Petit déjeuner – shopping pour nos visiteur – soirée aéroport Formalité d’enregistrement – fin du séjour."
+                        }
+                        ]}
                 ]
             },
             bedrooms: [
@@ -135,10 +149,8 @@ class TourService{
             date:{
                 editable: true,
                 value: ""
-            }
-
-
-
+            },
+            couple:false
         }
     }
 
@@ -273,15 +285,152 @@ class TourService{
                     }
                 ]
                 
-            }
-
-
-
+            },
+            date:{
+                editable: true,
+                value: ""
+            },
+            couple: false
         }
     }
 
     getKribiTour(){
 
+        return {
+            title: "Voyage en Terre Sainte",
+            infos:[
+                {
+                    icon:"faMapMarkerAlt",
+                    text:"Kribi"
+                },
+                {
+                    icon:"faHeart",
+                    text:"Voyage de couple"
+                },
+                {
+                    icon:"faClock",
+                    text:"3 jours et 2 Nuits"
+                }
+                
+            ],
+            images: [
+                {
+                  "previewImageSrc": "../../../assets/img/tourism/dubai.jpeg",
+                  "thumbnailImageSrc": "../../../assets/img/tourism/dubai.jpeg",
+                  "alt": "Description for Image 1",
+                },
+                {
+                  "previewImageSrc": "../../../assets/img/home/tourism/caire.jpeg",
+                  "thumbnailImageSrc": "../../../assets/img/home/tourism/caire.jpeg",
+                  "alt": "Description for Image 1",
+                },
+                {
+                  "previewImageSrc": "../../../assets/img/home/tourism/kribi.jpeg",
+                  "thumbnailImageSrc": "../../../assets/img/home/tourism/kribi.jpeg",
+                  "alt": "Description for Image 1",
+                },
+                {
+                  "previewImageSrc": "../../../assets/img/tourism/dubai.jpeg",
+                  "thumbnailImageSrc": "../../../assets/img/tourism/dubai.jpeg",
+                  "alt": "Description for Image 1",
+                }
+            ],
+            description :{
+                title: "Description",
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut corrupti porro officiis rem soluta magnam quaerat et, hic quo aliquid natus architecto vitae dolorum qui, expedita, fuga culpa dicta quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor inventore in perspiciatis, a, at doloremque numquam iure temporibus sunt incidunt mollitia labore dolorem harum illo cupiditate saepe assumenda rerum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia quam nobis soluta."
+
+            },
+            includes:{
+                title: "Compris dans le package",
+                tags: [
+                    {
+                        icon:"faBed",
+                        text:"Logement Hôtel, Appartement"
+                    },
+                    {
+                        icon:"faShuttleVan",
+                        text:"Bus VIP Aller et Retour"
+                    },
+                    {
+                        icon:"faMountain",
+                        text:"Visite de lieux incontournables"
+                    } ,
+                    {
+                        icon:"faCar",
+                        text:"Déplacements dans la ville"
+                    } 
+                ]
+            },
+            program: {
+                title:"Programme du séjour",
+                teaser: "",
+                days:[
+
+                    {
+                        header: "Jour 1 : Départ",
+                        content:[
+                            {text : "Départ du Cameroun pour Israel."},
+                            {text: "Accueil et réception par notre équipe sur place, assistance des formalités douanières et de police, et direction Galilée"}
+                        ]
+                    },
+                    {
+                        header: "Jour 2 : Nazareth - Mont des Prépice - Cana",
+                        content: [
+                            {text: "Visite de Nazareth village (village reconstitué à l'époque de Jésus afin de découvrir la vie et l'enfance du Christ ."},
+                            {text: "Visite de la Basilique de l'Annonciation et sa crypte (la grotte sacrée de la prophétie sur la naissance de Jésus, Luc &:26-28 ."},
+                            {text: "Visite des églises de St Joseph, la Synagogue, de l'église St Gabriel ."},
+                            {text: "Ascension du mont des Prépices, lieu où la population voulu jeter Jésus après sa déclaration messianique ."},
+                            {text: "Visite du village de Cana et de l'église Franciscaine pour évoquer le premier miracle de la transformation de l'eau en vin lors des noces ."}
+                        ]
+                    },
+    
+                    {
+                        header: "Jour 3 : Moment détente plage et aurevoir Kribi ",
+                        content: [
+                            {
+                                text: "Visite du Mont des Béatitudes, colline sur laquelle Jésus pronoça le sermon de la montagne aux huits béatitudes"
+                            },
+                            {
+                                text: "Visite de capharnaûm haut lieu du christianisme du fait que Jésus vécut dans ce village et en fit le centre de son ministèreine sur laquelle Jésus pronoça le sermon de la montagne aux huits béatitudes"
+                            },
+                            {
+                                text: "Visite de Betsaida, village de pécheur maudit par Jésus du fait du manque de foi de ses habitants."
+                            },
+                            {
+                                text: "Visite de Tabgha, site du miracle de la multiplication des pains et des poissons et l'apparition de Jésus après la résurrection ."
+                            },
+                            {
+                                text: "Détente et promenade en bateau sur le lac de Tibériade ."
+                            },
+                            {
+                                text: "Visite de Yardenit, pour un baptême à l'image de celui reçu par Jésus de Jean Le Baptiste."
+                            }
+                        ]
+                    }
+
+                ]
+            },
+            bedrooms: [
+                {
+                    key: 1,
+                    name: "Hôtel",
+                    price: 130000,
+                    explain: "Chambre couple"
+                },
+                {
+                    key: 2,
+                    name: "Appartement meublé",
+                    price: 205000,
+                    explain: "Comme à la maison"
+                }
+            ],
+            date:{
+                editable: true,
+                value: ""
+            },
+            couple: true
+            
+        }
     }
 
     getIsraelEgypteTour(){
@@ -439,9 +588,8 @@ class TourService{
             date:{
                 editable: false,
                 value: "05-07-22 au 15 15-07-22"
-            }
-
-
+            },
+            couple: false
 
         }
     }
@@ -637,7 +785,8 @@ class TourService{
             date:{
                 editable: false,
                 value: "05-07-22 au 15 15-07-22"
-            }
+            },
+            couple: false
 
 
 
