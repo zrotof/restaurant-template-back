@@ -179,11 +179,9 @@ class MailService{
                     + "Date fin : " + dateFin + " " + heureFin + "\n"
                     + "Extras : " + extrasList
 
-
         let messageBody = "Bonjour, " +"\n\n"+  info + "\n\n" + personalData;
 
         var transporter = nodemailer.createTransport(mailGun(auth)); 
-
 
         const mailOptions = {
             from: email,

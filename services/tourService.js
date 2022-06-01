@@ -1,6 +1,68 @@
 
 class TourService{
 
+
+    getShowcasedTours(){
+
+        return [
+
+            {
+              title: "7 Nuits Et 8 Jours À Dubaî",
+              price: 800000,
+              image:"../../../assets/img/home/tourism/dubai.jpeg",
+              link: "dubai",
+              place: "Dubaî"
+            }
+      
+            ,
+      
+            {
+              title: "Vers Les Hauts Lieux De La Chrétienté",
+              price: 2300000,
+              image: "../../../assets/img/home/tourism/isra-egyp.png",
+              link:"israel-egypte",
+              place: "Israel - Egypte"
+      
+            }
+      
+            ,
+      
+            {
+              title: "Pélérinage En Terre Sainte",
+              price: 780000,
+              image: "../../../assets/img/home/tourism/israel.jpeg",
+              link:"israel",
+              place: "Israel"
+      
+            },
+      
+            {
+              title: "3 Nuits Et 4 Jours Au Caire",
+              price: 450000,
+              image:"../../../assets/img/home/tourism/caire.jpeg",
+              link: "caire",
+              place: "Caire"
+      
+            },
+            
+            {
+              title: "Weekend Détente En Amoureux",
+              price: 130000,
+              image:"../../../assets/img/home/tourism/kribi.jpeg",
+              link: "kribi",
+              place: "Kribi"
+      
+            }
+            
+          ];
+
+    }
+
+    getAllTours(){
+        
+    }
+
+
     //Getting data for dubai package tour
     getDubaiTour(){
         return {

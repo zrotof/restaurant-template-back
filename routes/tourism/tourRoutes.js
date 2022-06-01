@@ -8,6 +8,12 @@ router.get('/', async(req, res) =>{
     res.end("You are in the sauce")
 });
 
+router.get('/showcased', async (req,res,next) => {
+
+    const tours = new TourService().getShowcasedTours();
+    res.send(tours)
+})
+
 router.get('/dubai', async (req,res,next)=>{
     
     const tour = new TourService().getDubaiTour();
