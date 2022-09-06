@@ -1,9 +1,6 @@
-const express = require('express');
 const cors = require('cors');
 
-const app = express();
-
-const whiteList =['http://localhost:4200', 'https://www.elites-voyages.com', 'https://elites-voyages.com', 'http://www.elites-voyages.com', 'https://elites-voyages.com'];
+const whiteList =['http://localhost:4200', 'https://www.elites-voyages.com', 'https://elites-voyages.com'];
 
 var corsOptionDelegate  = (req, callback) =>{
 
@@ -21,5 +18,4 @@ var corsOptionDelegate  = (req, callback) =>{
 
 }
 
-exports.cors = cors();
 exports.corsWithOptions = cors(corsOptionDelegate);
