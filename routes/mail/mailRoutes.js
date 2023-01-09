@@ -10,15 +10,17 @@ router.get('/', async(req, res) =>{
 
 router.post('/contact', async (req,res,next)=>{
         
-    const { civility, firstname, lastname, email, phone, preference, subject, message } = req.body;
-    await new MailService().sendContactMail(civility, firstname, lastname, email, phone, preference, subject, message, function (error, info) { 
+    const { name, email, phone, message } = req.body;
+
+    await new MailService().sendContactMail(name, email, phone,message, function (error, info) { 
 
         if(error){
             res.json({message: 'error'})
-
+            console.log(error)
         }
         else{
             res.json({message: 'success'})
+            console.log("Ceci est bien appelé");
         }
     })
   
