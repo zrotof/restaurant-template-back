@@ -1,6 +1,6 @@
 const cors = require('cors');
 
-const whiteList =['http://localhost:4200', 'http://api.restaurant.sm-digitalizer.fr', ''];
+const whiteList =['http://localhost:4200', 'http://restaurant.sm-digitalizer.fr', 'https://restaurant.sm-digitalizer.fr'];
 
 var corsOptionDelegate  = (req, callback) =>{
 

@@ -2,8 +2,8 @@ exports.recommendedProduct = async (req, res) =>{
 
     const recommendedProductArray = [
         {
-          image: "../../../assets/menu/cotelettes.png",
-          imageBg: "../../../assets/menu/cotelettes-bg.jpeg",
+          image: "../../../assets/img/menu/cotelettes.png",
+          imageBg: "../../../assets/img/menu/cotelettes-bg.jpeg",
           name: "Côtelettes de boeuf braisées",
           shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
           price: 29.99,
@@ -31,8 +31,8 @@ exports.recommendedProduct = async (req, res) =>{
           ref: 'fu_01'
         },
           {
-            image: "../../../assets/menu/poulet.png",
-            imageBg: "../../../assets/menu/poulet-bg.jpeg",
+            image: "../../../assets/img/menu/poulet.png",
+            imageBg: "../../../assets/img/menu/poulet-bg.jpeg",
             name: "Poulet Braisé",
             shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
             price: 19.99,
@@ -52,8 +52,8 @@ exports.recommendedProduct = async (req, res) =>{
           ref: 'fu_01'
           },
           {
-            image: "../../../assets/menu/viandes.png",
-            imageBg: "../../../assets/menu/cotelettes-bg.jpeg",
+            image: "../../../assets/img/menu/viandes.png",
+            imageBg: "../../../assets/img/menu/viandes-bg.jpeg",
             name: "Steak grillé",
             shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
             price: 19.99,
@@ -89,8 +89,8 @@ exports.recommendedProduct = async (req, res) =>{
 exports.mealProduct = async (req, res) =>{
   const mealProductArray = [
     {
-      image: "../../../assets/menu/cotelettes.png",
-      imageBg: "../../../assets/menu/cotelettes-bg.jpeg",
+      image: "../../../assets/img/menu/cotelettes.png",
+      imageBg: "../../../assets/img/menu/cotelettes-bg.jpeg",
       name: "Côtelettes de boeuf braisées",
       shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
       price: 29.99,
@@ -118,8 +118,8 @@ exports.mealProduct = async (req, res) =>{
       ref: 'fu_01'
     },
     {
-      image: "../../../assets/menu/poulet.png",
-      imageBg: "../../../assets/menu/poulet-bg.jpeg",
+      image: "../../../assets/img/menu/poulet.png",
+      imageBg: "../../../assets/img/menu/poulet-bg.jpeg",
       name: "Épaule d'agneau braisé",
       shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
       price: 19.99,
@@ -139,8 +139,8 @@ exports.mealProduct = async (req, res) =>{
       ref: 'fu_01'
     },
     {
-      image: "../../../assets/menu/viandes.png",
-      imageBg: "../../../assets/menu/cotelettes-bg.jpeg",
+      image: "../../../assets/img/menu/viandes.png",
+      imageBg: "../../../assets/img/menu/viandes-bg.jpeg",
       name: "Épaule d'agneau braisé",
       shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
       price: 19.99,
@@ -168,8 +168,8 @@ exports.mealProduct = async (req, res) =>{
       ref: 'fu_01'
     },
     {
-      image: "../../../assets/menu/magret.png",
-      imageBg: "../../../assets/menu/magret.png",
+      image: "../../../assets/img/menu/magret.png",
+      imageBg: "../../../assets/img/menu/magret-bg.jpeg",
       name: "Magret de cannard",
       shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
       price: 29.99,
@@ -205,8 +205,9 @@ exports.mealProduct = async (req, res) =>{
 exports.fishProduct = async (req, res) =>{
   const fishProductArray = [
       {
-        image: "../../../assets/menu/poissons.png",
-        name: "TIlapia braisé",
+        image: "../../../assets/img/menu/poissons.png",
+        imageBg: "../../../assets/img/menu/tilapia-bg.jpeg",
+        name: "Tilapia braisé",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 17.99,
         ingredients : ["agneaux", "patte d'arachide", "épices", "banane plantain", "tomate", "ail"],
@@ -233,8 +234,9 @@ exports.fishProduct = async (req, res) =>{
         ref: 'fu_01'
       },
       {
-        image: "../../../assets/menu/poissons.png",
-        name: "Tilapia braisé",
+        image: "../../../assets/img/menu/sardines.png",
+        imageBg: "../../../assets/img/menu/sardines-bg.jpeg",
+        name: "Sardines braisées",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 17.99,
         ingredients : ["agneaux", "patte d'arachide", "épices", "banane plantain", "tomate", "ail"],
@@ -270,7 +272,7 @@ exports.fishProduct = async (req, res) =>{
 exports.saladProduct = async (req, res) =>{
   const saladProductArray = [
       {
-        image: "../../../assets/menu/vegetables.png",
+        image: "../../../assets/img/menu/vegetables.png",
         name: "Salade verte",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 12.99,
@@ -290,7 +292,7 @@ exports.saladProduct = async (req, res) =>{
         ref: 'fu_01'
       },
       {
-        image: "../../../assets/menu/vegetables.png",
+        image: "../../../assets/img/menu/vegetables.png",
         name: "Salade verte",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 12.99,
@@ -310,7 +312,7 @@ exports.saladProduct = async (req, res) =>{
         ref: 'fu_01'
       },
       {
-        image: "../../../assets/menu/vegetables.png",
+        image: "../../../assets/img/menu/vegetables.png",
         name: "Salade verte",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 12.99,
@@ -331,7 +333,7 @@ exports.saladProduct = async (req, res) =>{
         ref: 'fu_01'
       },
       {
-        image: "../../../assets/menu/vegetables.png",
+        image: "../../../assets/img/menu/vegetables.png",
         name: "Salade verte",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 12.99,
@@ -359,7 +361,8 @@ exports.saladProduct = async (req, res) =>{
 exports.accompanimentProduct = async (req, res) =>{
   const accompanimentProductArray = [
       {
-        image: "../../../assets/menu/rice.png",
+        image: "../../../assets/img/menu/rice.png",
+        imageBg: "../../../assets/img/menu/rice-bg.jpeg",
         name: "Riz cuit vapeur",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 3.99,
@@ -368,7 +371,8 @@ exports.accompanimentProduct = async (req, res) =>{
         ref: 'fu_02'
       },
       {
-        image: "../../../assets/menu/plantain.png",
+        image: "../../../assets/img/menu/plantain.png",
+        imageBg: "../../../assets/img/menu/plantain-bg.jpeg",
         name: "Frites plantains mûrs",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 3.99,
@@ -377,7 +381,8 @@ exports.accompanimentProduct = async (req, res) =>{
         ref: 'fu_02'
       },
       {
-        image: "../../../assets/menu/pommes.png",
+        image: "../../../assets/img/menu/pommes.png",
+        imageBg: "../../../assets/img/menu/frites-bg.jpeg",
         name: "Frites pommes",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 3.99,
@@ -394,24 +399,27 @@ exports.breakfastProduct = async (req, res) =>{
   const breakfastProductArray = [
 
       {
-        image: "../../../assets/menu/breakfast.png",
-        name: "Bol de mixte céréals fruits bio",
+        image: "../../../assets/img/menu/breakfast.png",
+        imageBg: "../../../assets/img/menu/fruits-bg.jpeg",
+        name: "Bol de fruits mixte bio",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 8.50,
         combined: false,
         ref: 'fu_02'
       }
       ,{
-        image: "../../../assets/menu/breakfast.png",
-        name: "Bol de mixte céréals fruits bio",
+        image: "../../../assets/img/menu/banane.png",
+        imageBg: "../../../assets/img/menu/cereales-bg.jpeg",
+        name: "Bol de Fraises et Bananes",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 8.50,
         combined: false,
         ref: 'fu_02'
       },
       {
-        image: "../../../assets/menu/breakfast.png",
-        name: "Bol de mixte céréals fruits bio",
+        image: "../../../assets/img/menu/flocon.png",
+        imageBg: "../../../assets/img/menu/flocon-bg.jpeg",
+        name: "Flocon d'avoine fruité",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 8.50,
         combined: false,
@@ -426,7 +434,8 @@ exports.breakfastProduct = async (req, res) =>{
 exports.drinkProdut = async(req, res) => {
   const drinkProdutArray = [
       {
-        image: "../../../assets/menu/juice.jpeg",
+        image: "../../../assets/img/menu/orange.png",
+        imageBg: "../../../assets/img/menu/orange-bg.jpeg",
         name: "Jus d'orange frais",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 1.50,
@@ -434,8 +443,9 @@ exports.drinkProdut = async(req, res) => {
         ref: 'fu_02'
       },
       {
-        image: "../../../assets/menu/juice.jpeg",
-        name: "Jus d'orange frais",
+        image: "../../../assets/img/menu/papaye.png",
+        imageBg: "../../../assets/img/menu/papaye-bg.jpeg",
+        name: "Jus de papaye",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 1.50,
         combined: false,
@@ -449,7 +459,8 @@ exports.drinkProdut = async(req, res) => {
 exports.desertProduct = async (req, res) =>{
   const desertProductArray = [
       {
-        image: "../../../assets/menu/icecream.jpeg",
+        image: "../../../assets/img/menu/myrtilles.png",
+        imageBg: "../../../assets/img/menu/myrtilles-bg.jpeg",
         name: "Glace aux myrtilles",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 2.99,
@@ -476,8 +487,10 @@ exports.desertProduct = async (req, res) =>{
         ref: 'fu_03'
       },
       {
-        image: "../../../assets/menu/icecream.jpeg",
-        name: "Glace aux myrtilles",
+        
+        image: "../../../assets/img/menu/chocolat.png",
+        imageBg: "../../../assets/img/menu/chocolat-bg.jpeg",
+        name: "Glace au chocolat",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 2.99,
         mandatories : ["Pot", "Cornet"],
@@ -503,8 +516,9 @@ exports.desertProduct = async (req, res) =>{
         ref: 'fu_03'
       },
       {
-        image: "../../../assets/menu/icecream.jpeg",
-        name: "Glace aux myrtilles",
+        image: "../../../assets/img/menu/menthe.webp",
+        imageBg: "../../../assets/img/menu/menthe-bg.webp",
+        name: "Glace saveur menthe",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .",
         price: 2.99,
         mandatories : ["Pot", "Cornet"],
@@ -530,8 +544,9 @@ exports.desertProduct = async (req, res) =>{
         ref: 'fu_03'
       },
       {
-        image: "../../../assets/menu/icecream.jpeg",
-        name: "Glace aux myrtilles",
+        image: "../../../assets/img/menu/fraise.png",
+        imageBg: "../../../assets/img/menu/fraise-bg.jpeg",
+        name: "Glace à la fraise",
         shortDescription: "Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout",
         price: 2.99,
         mandatories : ["Pot", "Cornet"],
